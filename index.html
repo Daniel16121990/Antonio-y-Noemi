@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mario y Nomeni</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+15&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+15&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="./assets/iconos/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="./mobil.css">
+</head>
+<body class=".body-sin-scroll" onload="abrirModal()">
+    <!-- Modal de inicio -->
+    <section id="modalInicio" class="modalInicio">
+        <div class="modalContenidoInicio">
+         <!-- <span class="cerrar" onclick="cerrarModal()">&times;</span> -->
+        <div class="contenedorBienvenidos">
+            <p class="titulo">Bienvenidos a la invitación de</p>
+            <p class="tituloIniciales">C<Span>&</Span>S</p>
+            <P class="tituloNombres">CARLOS & SONIA</P>
+            <img src="" alt="">
+        </div>
+        <div>
+            <p>La música de fondo es parte de la experiencia</p>
+            <button onclick="cerrarModalConMusica()">Ingresar con música</button>
+            <button onclick="cerrarModal()">ingresar sin música</button>
+        </div>
+        </div>
+    </section>
+    <!-- fin modal inicio -->
+
+
+    <header>
+        <!-- Botón flotante para reproducir/pausar la canción -->
+        <div id="botonMusica" class="boton-flotante" onclick="toggleReproducirPausar()">Reproducir</div>
+        <audio id="cancion" src="./assets/audio/7.- BAJO TIERRA – Pujllay  Man Tusuy.mp3"></audio>
+        <img src="" alt="">
+    </header>
+
+    <main>
+        <section>
+            <div>
+                <p>15.05.2021</p>
+                <p>C<span>&</span>S</p>
+                <p>CARLOS & SONIA</p>
+            </div>
+            <div>
+                <img src="" alt="">
+                <p>Todos somos mortales, hasta el primer beso y la segunda copa de vino</p>
+                <img src="" alt="">
+            </div>
+        </section>
+        <section>
+            <p>Falta</p>
+            <div>
+                <p>contador</p>
+            </div>
+            <img src="" alt="">
+        </section>
+        <section>
+            <div>
+                <img src="" alt="">
+                <p>Ceremonia</p>
+                <img src="" alt="">
+            </div>
+            <div>
+                <p>Día</p>
+                <p>Sábado 15 de Mayo - 17hs</p>
+                <button>Agendar</button>
+            </div>
+            <div>
+                <p>Lugar</p>
+                <p>Parroquia Nuestra Señora de Lujan</p>
+                <button>Confirmar asistencia</button>
+            </div>
+            <div>
+                <p>Dirección</p>
+                <p>Av. Pergamino 203 - La Paz</p>
+                <button>¿Cómo llegar?</button>
+            </div>
+        </section>
+        <section>
+            <div>
+                <img src="" alt="">
+                <p>Celebración</p>
+                <img src="" alt="">
+            </div>
+            <div>
+                <p>Día</p>
+                <p>Sábado 15 de Mayo - 20hs</p>
+                <button>Agendar</button>
+            </div>
+            <div>
+                <p>Lugar</p>
+                <p>Salón de fiestas Avril</p>
+                <button>Confirmar Asistencia</button>
+            </div>
+            <div>
+                <p>Dirección</p>
+                <p>Av. Los Reartes 12 - La Paz</p>
+                <button>¿Cómo llegar?</button>
+            </div>
+        </section>
+        <section>
+            <div>
+                <img src="" alt="">
+                <p>Retratos de Nuestro Amor</p>
+                <p>Un minuto, un segundo, un instante que queda en la eternidad</p>
+                <img src="" alt="">
+            </div>
+            <div>
+                <p>carrusel de imagenes</p>
+            </div>
+        </section>
+        <section>
+            <div>
+                <img src="" alt="">
+                <p>Compartimos este día junto a ti</p>
+                <p>Escribenos un mensaje o dedicanos alguna canción</p>
+                <img src="" alt="">
+                <button>Escríbenos</button>
+            </div>
+        </section>
+        <section>
+            <div>
+                <p>C<span>&</span>S</p>
+                <p>CARLOS Y SONIA</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div>
+            <p>Desarrollado con ♥ por</p>
+            <img src="" alt="">
+        </div>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+</html>
