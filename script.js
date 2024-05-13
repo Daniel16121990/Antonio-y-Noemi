@@ -1,7 +1,7 @@
 var flotante = document.getElementById('botonMusica')
   // Referencia al elemento de audio
 var cancion = document.getElementById('cancion');
-// Función para abrir el modal
+
 
     // Obtener el contenedor y el SVG
     const contenedor = document.getElementById('BendicionPadresDiosMarco');
@@ -19,8 +19,17 @@ var cancion = document.getElementById('cancion');
     const fondoDecorativo3 = document.getElementById('fondoDecorativo3');
     const bordesRedondeados3 = document.getElementById('bordesRedondeados3');
 
-
+// Función para abrir el modal
   function abrirModal() {
+    // Evento para detectar cuando se cargan todos los recursos de la página
+window.onload = function() {
+  mostrarModal(); // Mostrar el modal al cargar la página
+  
+  // Listener para detectar cuando se han cargado todos los recursos
+  window.addEventListener('load', function() {
+    ocultarModal(); // Ocultar el modal cuando se han cargado todos los recursos
+  });
+}
     document.getElementById('modalInicio').style.display = 'block';
     document.body.classList.add('body-sin-scroll'); // Deshabilitar el desplazamiento del cuerpo
 
@@ -120,3 +129,29 @@ window.addEventListener('resize', ajustarTamanio2);
 
 window.addEventListener('load', ajustarTamanio3);
 window.addEventListener('resize', ajustarTamanio3);
+
+
+
+
+
+
+
+
+
+
+
+
+// Función para mostrar el modal mientras se cargan los recursos
+function mostrarModal() {
+  var modal = document.getElementById("myModal");
+  modal.style.display = "block";
+}
+
+// Función para ocultar el modal y mostrar el contenido principal
+function ocultarModal() {
+  var modal = document.getElementById("myModal");
+  modal.style.display = "none";
+  document.getElementById("modalInicio").classList.remove("modalInicio");
+}
+
+
