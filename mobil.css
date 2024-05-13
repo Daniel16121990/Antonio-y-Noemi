@@ -26,6 +26,10 @@ html{
     font-size: 62.5%;
     font-family: var(--fuente1)
 }
+body{
+  background-color: var(--color-pallete-6);
+}
+
 /* Estilos para el modal */
 .modalInicio {
     display: none;
@@ -34,6 +38,7 @@ html{
     width: 100%; /* Ancho del 100% de la ventana */
     height: 100vh; /* Alto del 100% de la ventana */
     background-color: #b49073; /* Fondo semitransparente */
+    z-index: 1000;
 
 }
   
@@ -42,15 +47,38 @@ html{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: var(--color-pallete-6);
     width: 100%;
     height: 100vh;
-    /* background-color: #b49073; */
-    background-color: #ffffff;
+    position: relative;
+    z-index: 999;
+  }
+  .esquinero{
+    position: absolute;
+    width: 30%;
+  }
+  .esquinero-arriba-izquierda {
+    top: 0;
+    left: 0;
+  }
+  .esquinero-arriba-derecha {
+    top: 0;
+    right: 0;
+
+  }
+  .esquinero-abajo-izquierda {
+    bottom: 0;
+    left: 0;
+    transform: rotate(180deg);
+  }
+  
+  .esquinero-abajo-derecha {
+    bottom: 0;
+    right: 0;
+    transform: rotate(180deg);
   }
   /* Estilos para deshabilitar el desplazamiento del cuerpo */
 .body-sin-scroll {
@@ -58,12 +86,52 @@ html{
   }
 /* Estilos para el botón flotante */
 .boton-flotante {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000; /* Asegura que el botón esté sobre otros elementos */
+  display: grid;
+  place-items: center;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-pallete-2);
+  opacity: 60%;
+  border-radius: 100%;
+  display: none;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 1000; /* Asegura que el botón esté sobre otros elementos */
+  /*para el efecto de borde*/
+  box-shadow: 8px 9px 28px black;
+  overflow: hidden;
   }  
+  .boton-flotante::before{
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-image: conic-gradient(rgb(121, 84, 84) 20deg, transparent 120deg);
+    animation: rotar 2s linear infinite;
+  }
+  @keyframes rotar{
+    from{
+      transform: rotate(0deg);
+    }
+    to{
+      transform: rotate(-360deg);
+    }
+  }
+  .boton-flotante::after{
+    content: "";
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    background-color: var(--color-pallete-2);
+    border-radius: 100%;
+
+  }
+  .boton-flotante img{
+    width: 35px;
+    z-index: 3;
+  }
   .contenedorBienvenidos{
     width: 100%;
     height: auto;
@@ -98,3 +166,483 @@ html{
     color: var(--color-pallete-1);
     font-weight: 600;
   }
+  .contenedorBienvenidos img{
+    width: 50%;
+    margin: 20px 0;
+  }
+  .contenedor2Bienvenida{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 40px;
+  }
+  .contenedor2Bienvenida p{
+    font-size: 1.6rem;
+    color: var(--color-pallete-1);
+    font-weight: 500;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .contenedor2Bienvenida .btnIngresarConMusica{
+    margin-bottom: 20px;
+  }
+  .contenedor2Bienvenida button{
+    width: 230px;
+    height: 40px;
+    background-color: var(--color-pallete-3);
+    border: none;
+    border-radius: 10px;
+    color: var(--color-pallete-5);
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .contenedor2Bienvenida button:hover{
+    background-color: var(--color-pallete-4);
+  }
+
+  .contenedorMain{
+    width: 100%;
+    height: auto;
+    background-color: var(--color-pallete-6);
+  }
+  .contenedorMain .sectionMainPortada{
+    width: 100%;
+    height: auto;
+  }
+  .contenedorMain .sectionMainPortada img{
+    width: 100%;
+  }
+  .contenedorMain .contenedorTop{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--color-pallete-6);
+    padding: 50px 50px;
+    text-align: center;
+  }
+  .contenedorMain .contenedorTop .divFechaInicialesNombres{
+    width: 100%;
+  }
+  .contenedorMain .contenedorTop .divFechaInicialesNombres p:nth-child(1){
+    color: var(--color-pallete-1);
+    font-size: 2rem;
+    font-family: var(--fuente2);
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  .contenedorMain .contenedorTop .divFechaInicialesNombres p:nth-child(2){
+    padding: 0 20px 10px 20px;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    font-size: 10rem;
+    border-top: 1px solid var(--color-pallete-2);
+    border-bottom: 1px solid var(--color-pallete-2);
+    color: var(--color-pallete-1);
+  }
+  .contenedorMain .contenedorTop .divFechaInicialesNombres span{
+    font-family: var(--fuente2);
+    color: var(--color-pallete-2);
+    font-size: 7rem;
+    margin: 0 10px;
+  }
+  .contenedorMain .contenedorTop .divFechaInicialesNombres p:nth-child(3){
+    font-size: 2.2rem;
+    font-family: var(--fuente2);
+    font-weight: 700;
+    color: var(--color-pallete-1);
+  }
+  .contenedorMain .contenedorTop .divGotaFraseGif{
+    width: 100%;
+    margin-top: 50px;
+  }
+  .contenedorMain .contenedorTop .divGotaFraseGif img{
+    width: 10px;
+  }
+  .contenedorMain .contenedorTop .divGotaFraseGif p{
+    font-size: 2.1rem;
+    color: var(--color-pallete-1);
+    font-weight: 300;
+    margin-bottom: 20px;
+  }
+  svg{
+    width: 100%;
+  }
+  svg .cls-2{
+    width: 100%;
+    height: 100%;
+    stroke: var(--color-pallete-4);
+    stroke-width: 10px;
+    fill: transparent;
+    stroke-dasharray: 0 2000; /* Inicia con el trazo invisible */
+      stroke-dashoffset: 2000; /* Inicia con el trazo fuera del SVG */
+      animation: dibujar 5s forwards infinite; /* Aplica la animación de dibujado */
+    }
+  @keyframes dibujar {
+    0% {
+      
+    }
+    100% {
+      stroke-dasharray: 1000 1000; /* Trazo completo */
+      stroke-dashoffset: 0; /* Trazo completamente visible */
+    }
+  }
+
+  .contenedorMain .sectionContador{
+    width: 100%;
+    height: 310px;
+    background-color: var(--color-pallete-5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    box-shadow: 0px -5px 20px -8px rgba(0,0,0,0.75), /* sombreado superior */
+                0px 5px 10px -5px rgba(0,0,0,0.75); /* sombreado inferior */
+  }
+  .contenedorMain .sectionContador p{
+    font-size: 4.5rem;
+    font-weight: 700;
+    color: var(--color-pallete-1);
+  }
+  .sectionContador .reloj{
+    display: flex;
+  }
+  .sectionContador .reloj .reloj-col{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+    font-size: 3.5rem;
+    color: var(--color-pallete-4);
+    text-align: center;
+    border-right: 1px solid var(--color-pallete-1);
+    padding: 0 15px;
+  }
+  .sectionContador .reloj .reloj-col .time{
+    font-size: 2.2rem;
+  }
+  .sectionContador #dias{
+    border-left: 1px solid var(--color-pallete-1);
+    margin: 20px 0;
+  }
+  .contenedorMain .sectionContador img{
+    width: 70%;
+  }
+  .sectionContador .divisorArriba{
+    margin-bottom: 20px;
+  }
+  .sectionContador .divisorAbajo{
+    margin-top: 20px;
+  }
+  @keyframes palpitacion {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.4); }
+    100% { transform: scale(1); }
+}
+
+.sectionContador svg.corazon {
+    animation: palpitacion 3s infinite;
+    transform-origin: center;
+    display: block;
+    margin: 0 auto;
+    width: 40px;
+    height: 40px;
+}
+.sectionBendicionPadresDios{
+  width: 100%;
+  height: auto;
+  padding: 30px 10px;
+}
+ .BendicionPadresDiosMarco{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  padding: 40px 20px;
+  /* z-index: 4; */
+}
+ .marco-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* z-index: 3; */
+}
+ .contenedorInternoBlanco{
+  width: 90%;
+  height: 100%;
+  border-radius: 20px;
+  background-color: var(--color-pallete-5);
+  margin: 0 10px;
+  /* z-index: 5; */
+}
+.sectionBendicionPadresDios .contenedorInternoBlanco .divTitulo{
+  font-size: 2rem;
+  color: var(--color-pallete-1);
+  font-weight: 500;
+}
+.sectionBendicionPadresDios .contenedorInternoBlanco .divTitulo .imgRosa{
+  margin-top: 40px;
+  width: 100px;
+}
+.sectionBendicionPadresDios .contenedorInternoBlanco .divPadresNovio{
+  margin: 15px 0;
+  width: 100%;
+}
+.sectionBendicionPadresDios .contenedorInternoBlanco .divPadresNovio .padresNovioTitulo{
+  font-size: 2rem;
+  color: var(--color-pallete-4);
+  font-weight: 700;
+}
+.sectionBendicionPadresDios .contenedorInternoBlanco .divPadresNovio .padresNovio{
+  font-size: 1.8rem;
+  color: var(--color-pallete-1);
+}
+
+/*aaaaaaaaaaaaaaaaaaaaaaaa*/
+.sectionBendicionPadresDios2{
+  width: 100%;
+  height: auto;
+  padding: 30px 10px;
+}
+ .BendicionPadresDiosMarco2{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  padding: 40px 20px;
+  /* z-index: 4; */
+}
+ .marco-svg2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
+ .contenedorInternoBlanco2{
+  width: 90%;
+  height: 100%;
+  border-radius: 20px;
+  background-color: var(--color-pallete-5);
+  margin: 0 10px;
+  z-index: 5;
+}
+
+.sectionBendicionPadresDios2 .contenedorInternoBlanco2 .divTitulo .imgIglesia{
+  margin-top: 40px;
+  width: 100px;
+}
+.sectionBendicionPadresDios2 .contenedorInternoBlanco2 .divTitulo .tituloCeremonia{
+  font-size: 3.5rem;
+  font-weight: 100;
+  color: var(--color-pallete-1);
+}
+.sectionBendicionPadresDios2 .contenedorInternoBlanco2 .divPadresNovio{
+  margin: 30px 0;
+}
+.sectionBendicionPadresDios2 .contenedorInternoBlanco2 .divPadresNovio .diaTitulo{
+  font-size: 3rem;
+  color: var(--color-pallete-4);
+  font-weight: 100;
+  margin-bottom: 8px;
+}
+.sectionBendicionPadresDios2 .contenedorInternoBlanco2 .divPadresNovio .fechaCeremonia{
+  font-size: 1.7rem;
+  color: var(--color-pallete-1);
+  font-weight: 500;
+  font-family: var(--fuente2);
+  margin-bottom: 16px;
+}
+.sectionBendicionPadresDios2 .contenedorInternoBlanco2 .divPadresNovio .botonGeneral{
+  width: 230px;
+  height: 40px;
+  background-color: var(--color-pallete-3);
+  border: none;
+  border-radius: 10px;
+  color: var(--color-pallete-5);
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: background-color 0.4s ease;
+}
+.sectionBendicionPadresDios2 .contenedorInternoBlanco2 .divPadresNovio .botonGeneral:hover{
+  background-color: var(--color-pallete-4);
+}
+
+.sectionCarrusel{
+  width: 100%;
+  height: auto;
+  background-color: var(--color-pallete-5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  margin-top: 30px;
+  box-shadow: 0px -5px 20px -8px rgba(0,0,0,0.75), /* sombreado superior */
+              0px 5px 10px -5px rgba(0,0,0,0.75); /* sombreado inferior */
+}
+.sectionCarrusel .divCarruselTitulo{
+  width: 100%;
+  height: 100%;
+}
+.divCarruselTitulo .tituloRetratos{
+  font-size: 4rem;
+  color: var(--color-pallete-1);
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.divCarruselTitulo .fraseCarrusel{
+  font-size: 1.8rem;
+  font-family: var(--fuente2);
+  color: var(--color-pallete-2);
+  margin-bottom: 20px;
+}
+.sectionCarrusel .divCarruselTitulo .imgCamara{
+  width: 100px;
+}
+
+
+.carrusel{
+  width: 90%;
+  text-align: center;
+  margin: 0 auto;
+  border: 30px solid var(--color-pallete-2);
+  margin-top: 20px;
+}
+.carrusel img {
+
+  width: 250px;
+  height: auto;
+  margin: 0 auto; /* Centrar la imagen horizontalmente */
+}
+.sectionEscribenos{
+  width: 100%;
+  height: auto;
+
+}
+.sectionEscribenos .divEscribenos{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  margin: 40px 0;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sectionEscribenos .divEscribenos .fraseEscribenos{
+  font-size: 4rem;
+  color: var(--color-pallete-1);
+  margin: 20px 0;
+}
+.sectionEscribenos .divEscribenos .fraseEscribenos2{
+  font-size: 1.8rem;
+  font-family: var(--fuente2);
+  color: var(--color-pallete-2);
+}
+.sectionEscribenos .divEscribenos .imgCarta{
+  width: 100px;
+  margin: 20px 0;
+}
+.sectionEscribenos .divEscribenos .btnEscribenos{
+  width: 230px;
+  height: 40px;
+  background-color: var(--color-pallete-3);
+  border: none;
+  border-radius: 10px;
+  color: var(--color-pallete-5);
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: background-color 0.4s ease;
+}
+
+.sectionEscribenos .divEscribenos .btnEscribenos:hover{
+  background-color: var(--color-pallete-4);
+}
+
+
+
+
+
+.sectionInicialesFin{
+  width: 100%;
+  height: auto;
+  background-color: var(--color-pallete-5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0px -5px 20px -8px rgba(0,0,0,0.75), /* sombreado superior */
+              0px 5px 10px -5px rgba(0,0,0,0.75); /* sombreado inferior */
+}
+
+
+.sectionInicialesFin .divFechaInicialesNombresFin{
+  width: 100%;
+  text-align: center;
+  margin: 20px 0;
+}
+.sectionInicialesFin .divFechaInicialesNombresFin p:nth-child(1){
+  padding: 0 20px 10px 20px;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  font-size: 10rem;
+  border-top: 1px solid var(--color-pallete-2);
+  border-bottom: 1px solid var(--color-pallete-2);
+  color: var(--color-pallete-1);
+}
+.sectionInicialesFin .divFechaInicialesNombresFin span{
+  font-family: var(--fuente2);
+  color: var(--color-pallete-2);
+  font-size: 7rem;
+  margin: 0 10px;
+}
+.sectionInicialesFin .divFechaInicialesNombresFin p:nth-child(2){
+  font-size: 2.2rem;
+  font-family: var(--fuente2);
+  font-weight: 700;
+  color: var(--color-pallete-1);
+}
+
+footer{
+  
+  width: 100%;
+
+  background-color: var(--color-pallete-2);
+}
+footer .divFooter{
+  width: 100%;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1.6rem;
+  color: var(--color-pallete-5);
+  font-family: var(--fuente2);
+  font-weight: 500;
+}
