@@ -40,7 +40,11 @@ background-color: var(--color-pallete-6);
         display: flex;
         justify-content: center;
         align-items: center;
+        text-align: center;
         z-index: 999;
+}
+.modalCarga p{
+  font-size: 2rem;
 }
 /* Estilos para el modal */
 .modalInicio {
