@@ -1,0 +1,8 @@
+.contenedorMain{
+    max-width: 50%;
+    margin: 0 auto;
+  }
+  .modalContenidoInicio {
+    width: 50%; /* Ancho del 100% de la ventana */
+    height: 100vh; /* Alto del 100% de la ventana */
+  }

@@ -232,7 +232,7 @@ overflow: hidden;
 }
 .contenedorMain .contenedorTop{
   width: 100%;
-  height: 100vh;
+  height: auto;
   position: relative;
   display: flex;
   flex-direction: column;
