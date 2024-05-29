@@ -158,3 +158,33 @@ document.getElementById('btn-ubicacion-iglesia').addEventListener('click', funct
   var url = 'https://maps.app.goo.gl/dFGeCrUpou3Amxow6'; // Enlace de Google Maps del evento
   window.open(url, '_blank');
 });
+
+
+//agendar asistencia en la fiesta
+document.getElementById('btn-agendar-fiesta').addEventListener('click', function() {
+  var titulo = 'Fiesta matrimonial de Antonio y Noemi';
+  var descripcion = 'Boda de Antonio y Nomei en la iglesia';
+  var ubicacion = 'Local';
+  var fechaInicio = '2024-06-01T17:00:00';
+  var fechaFin = '2024-06-01T18:00:00';
+  
+  var url = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(titulo)}&details=${encodeURIComponent(descripcion)}&location=${encodeURIComponent(ubicacion)}&dates=${fechaInicio.replace(/-|:|\.\d\d\d/g, '')}/${fechaFin.replace(/-|:|\.\d\d\d/g, '')}`;
+  
+  window.open(url, '_blank');
+});
+
+//confirmar asistencia de fiesta a los novios via whatsapp
+document.getElementById('btn-confirmar-asistencia-fiesta').addEventListener('click', function() {
+  var numeroTelefono = '59161003028'; // Número de teléfono con código de país, sin espacios ni guiones
+  var mensaje = 'Hola, confirmo mi asistencia a la fiesta.';
+  
+  var url = `https://wa.me/${numeroTelefono}?text=${encodeURIComponent(mensaje)}`;
+  
+  window.open(url, '_blank');
+});
+// abrir ubicación de la fiesta:
+document.getElementById('btn-ubicacion-fiesta').addEventListener('click', function() {
+  
+  var url = 'https://maps.app.goo.gl/FAVEtVDH593LRPrP7'; // Enlace de Google Maps del evento
+  window.open(url, '_blank');
+});
