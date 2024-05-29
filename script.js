@@ -145,7 +145,7 @@ document.getElementById('btn-agendar-iglesia').addEventListener('click', functio
 
 //confirmar asistencia a los novios via whatsapp
 document.getElementById('btn-cofirmar-asistencia-iglesia').addEventListener('click', function() {
-  var numeroTelefono = '59171968225'; // Número de teléfono con código de país, sin espacios ni guiones
+  var numeroTelefono = '59161003028'; // Número de teléfono con código de país, sin espacios ni guiones
   var mensaje = 'Hola, confirmo mi asistencia al evento.';
   
   var url = `https://wa.me/${numeroTelefono}?text=${encodeURIComponent(mensaje)}`;
