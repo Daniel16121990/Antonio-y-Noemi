@@ -129,3 +129,16 @@ window.onload = function() {
   overlay.style.display = 'none';
   abrirModal()
 };
+
+//agendar asistencia en la iglesia
+document.getElementById('btn-agendar-iglesia').addEventListener('click', function() {
+  var titulo = 'Ceremonia religiosa Antonio y Noemi';
+  var descripcion = 'Boda de Antonio y Nomei en la iglesia';
+  var ubicacion = 'Iglesia';
+  var fechaInicio = '2024-06-01T09:00:00';
+  var fechaFin = '2024-06-01T10:00:00';
+  
+  var url = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(titulo)}&details=${encodeURIComponent(descripcion)}&location=${encodeURIComponent(ubicacion)}&dates=${fechaInicio.replace(/-|:|\.\d\d\d/g, '')}/${fechaFin.replace(/-|:|\.\d\d\d/g, '')}`;
+  
+  window.open(url, '_blank');
+});
