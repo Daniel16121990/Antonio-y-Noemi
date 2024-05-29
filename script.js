@@ -152,3 +152,9 @@ document.getElementById('btn-cofirmar-asistencia-iglesia').addEventListener('cli
   
   window.open(url, '_blank');
 });
+// abrir ubicación de la iglesia:
+document.getElementById('btn-ubicacion-iglesia').addEventListener('click', function() {
+  
+  var url = 'https://maps.app.goo.gl/dFGeCrUpou3Amxow6'; // Enlace de Google Maps del evento
+  window.open(url, '_blank');
+});
